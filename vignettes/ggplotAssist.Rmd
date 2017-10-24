@@ -1,0 +1,72 @@
+---
+title: "R package ggplotAssist"
+author: "Keon-Woong Moon"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ggplotAssist}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,comment = NA,fig.align='center',out.width="90%")
+```
+
+```
+The 'ggplotAssist' is an RStudio addin for teaching and learning plot generation using the 'ggplot2' package. You can learn each steps of plot generation - aesthetics mapping, select geometries, add scales, apply theme - by clicking your mouse without coding. You can see the resultant plot and see the each steps of plot layer by layer. You get resultant code for ggplot. 
+```
+
+## Prerequisite
+
+You have to install the developmental version of R package `editData` from github.
+
+```{r,eval=FALSE}
+#install.packages("devtools")
+devtools::install_github("cardiomoon/editData")
+```
+
+## Install package
+
+You can install `ggplotAssist` package from github. 
+
+```{r,eval=FALSE}
+#install.packages("devtools")
+devtools::install_github("cardiomoon/ggplotAssist")
+```
+
+## Usage: As an RStudio Add-in
+
+This addin can be used to interactively generate a `ggplot` using `ggplot2` package.
+The intended way to use this is as follows:
+
+1. Highlight a symbol naming a `data.frame` or a `tibble` in your R session, e.g. `msleep`(1). Execute this addin(arrow), to interactively manipulate it.
+
+```{r,echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/cardiomoon/ggplotAssistFigures/master/1.jpg")
+```
+
+2. You can see a brower window. You can see the data name(1) and R code for ggplot(2). Select `x`(3) and  `bodywt`(4) to map `bodywt` as a x-axis variable.
+
+```{r,echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/cardiomoon/ggplotAssistFigures/master/2.jpg")
+```
+
+... 
+
+11. When you're done, the code for the ggplot will be emitted at the cursor position(scarlet rectangle).
+
+```{r,echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/cardiomoon/ggplotAssistFigures/master/12.jpg")
+```
+
+## Usage: As a regular function
+
+You can use the `ggplotAssist()` function as a regular function, e.g. in a command line.
+
+```{r,eval=FALSE}
+result <- ggplotAssist(mtcars)
+```
+
+## Full vignette 
+
+You can find full vignette here. http://rpubs.com/cardiomoon/321791
